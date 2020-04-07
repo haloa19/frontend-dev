@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var o = {
+		name: '마이콜',
+		age: 20,
+		hasProperty: function(property) {
+			return property in this;
+		}
+}
+console.log(o.hasProperty("name"));
+console.log(o.hasProperty("age"))
+console.log(o.hasProperty("email"));
+
+console.log("================== hasOwnProperty ===================");
+
+console.log(o.hasOwnProperty("name"));
+console.log(o.hasOwnProperty("age"));
+console.log(o.hasOwnProperty("email"));
+
+console.log("================== with() ===================");
+with(o) {
+	console.log(name + ":" + age)
+}
+
+console.log("================== for ~ in ===================");
+var data = ""
+for(var property in o) {
+	if(typeof(o[property]) != 'function') {
+		data += (o[property] + ":");
+	}
+}
+console.log(data);
+
+</script>
+</head>
+<body>
+<select onchange="selectChanged()">
+	<option>value1</option>
+	<option>value2</option>
+	<option>value4</option>
+	<option>value5</option>
+</select>
+<br>
+아이디 입력: <input type="text" id="fname" onchange="myFunction()">
+
+<p>
+	INPUT에 포커스가 없어지면, 이전 값이 변했는 지 판단해서 항상 대문자로 만드는 예제입니다.
+</p>
+
+</body>
+</html>
