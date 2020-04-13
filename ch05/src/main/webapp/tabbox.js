@@ -8,6 +8,7 @@ var TabBox = {
 			// div : class='tab-box'
 			var divTabBox = document.getElementsByClassName('tab-box')[0];
 			var ulTabBox = divTabBox.childNodes[1];
+		
 			var liTabs = ulTabBox.getElementsByTagName('li');
 			
 			for(var i = 0; i < liTabs.length; i++) {		
